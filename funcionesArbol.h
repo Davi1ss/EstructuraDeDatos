@@ -65,3 +65,35 @@ return;
 // si existe nodo−>der
 // push a cola auxiliar nodo−>der
 }
+
+int eliminarNodo (NodoBinario ∗∗raiz, void ∗dato, int (∗comparar)(void∗,void∗))
+{
+//buscar el nodo a borrar usando cualquier recorrido 
+NodoBinario ∗∗ nborrar = BuscarNodo(raiz , dato , comparar);
+// si no se encontro el nodo
+// regresar0;
+/* caso 1, no tiene hijos el nodo a borrar */
+// si (∗nborrar)−>izq y (∗nborrar)−>der son nulos
+// liberar(∗nborrar)
+// hacer nulo (∗nborrar)
+// regresar1 ;
+/* caso 2, tiene hijo derecho*/
+// si(∗nborrar)−>izq es nulo entonces
+// crear apuntador NodoBinario temporal e igualarlo a ∗nborrar
+// (∗nborrar) es igual a (∗nborrar)−>der
+// liberar temporal
+// temporal hacer nulo
+// regreresa1
+/* caso 2, tiene hijo izquierdo */
+// si no si (∗nborrar)−>der, es nulo entonces
+(∗ nborrar)−>izq
+// liberar temporal
+// temporal hacer nulo
+// regresa1
+/* caso 3, tiene ambos hijos*/
+// buscar el nodo con valor minimo del sub arbol derecho alborrar
+// usando cualquier  recorrido NodoBinario ∗∗minimo = BuscarMinimo ((∗nborra r )−>de r , comparar ) ;
+(∗ nborrar)−>dato = (∗ minimo)−>dato;
+// intercambiar ligas y eliminar
+return eliminarNodo (&(∗nborrar)−>der,(∗minimo)−>dato,comparar) ;
+}
