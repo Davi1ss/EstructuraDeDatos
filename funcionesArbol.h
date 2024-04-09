@@ -97,3 +97,29 @@ NodoBinario ∗∗ nborrar = BuscarNodo(raiz , dato , comparar);
 // intercambiar ligas y eliminar
 return eliminarNodo (&(∗nborrar)−>der,(∗minimo)−>dato,comparar) ;
 }
+
+char ∗InfixToPostInfix(char ∗expresion) −> char∗ :
+//crear copia con malloc o calloc
+char ∗ copia = (char ∗) malloc (sizeof ( char)∗ strlen (expresion));
+// crear la pila
+int c =0;
+// para cada token en expresion hacer :
+// si token es operando :
+// copia [ c ] = token
+// incrementa c
+// sino si token es ’ ( ’ :
+// pushh a pila el token
+// sino si token es ’ ) ’ :
+// mientras pila no vacia y pila peek no es ’ ( ’ :
+// copia [ c ] = pila pop
+// incrementa c
+// pila pop para saca r ’ ( ’
+// si no:
+// mientras pila no vacia y Jerarqui a (token , pila peek) es menor o igual:
+// copia [ c ] = pila pop
+// incrementa c
+// hacer push al token
+// mientras pila no vacia
+//copia [ c ] = pila pop
+//incrementa c
+return copia;
